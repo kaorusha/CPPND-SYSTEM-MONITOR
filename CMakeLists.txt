@@ -1,7 +1,10 @@
 cmake_minimum_required(VERSION 2.6)
 project(monitor)
 
+<<<<<<< HEAD
 set(CURSES_NEED_NCURSES TRUE)
+=======
+>>>>>>> 59bf69ccd5ae6ec23629570447b64d6eac5941ce
 find_package(Curses REQUIRED)
 include_directories(${CURSES_INCLUDE_DIRS})
 
