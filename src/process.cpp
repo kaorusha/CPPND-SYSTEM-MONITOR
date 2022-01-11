@@ -17,9 +17,7 @@ int Process::Pid() { return pid_; }
 float Process::CpuUtilization() {
 
   float active_sec = LinuxParser::ActiveJiffies(Pid()) / sysconf(_SC_CLK_TCK);
-  // uptime of the system minus process start time
-  float total_sec = LinuxParser::UpTime() - UpTime();
-  return active_sec / total_sec;
+  return active_sec / (float)UpTime();
 }
 
 // TODO: Return the command that generated this process
@@ -43,7 +41,8 @@ string Process::User() { return LinuxParser::User(Pid()); }
 
 // TODO: Return the age of this process (in seconds)
 long int Process::UpTime() {
-  return LinuxParser::UpTime(Pid()) / sysconf(_SC_CLK_TCK);
+  // uptime of the system minus process start time
+  return LinuxParser::UpTime() - LinuxParser::UpTime(Pid()) / sysconf(_SC_CLK_TCK);
 }
 
 // TODO: Overload the "less than" comparison operator for Process objects
