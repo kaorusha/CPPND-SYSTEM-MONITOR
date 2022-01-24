@@ -2,6 +2,7 @@
 This project implement a basic system monitor (like [htop](https://github.com/hishamhm/htop) does, but simpler).
 ## Build and Run
 The instructions is written in the original starter code [repository](https://github.com/udacity/CppND-System-Monitor-Project-Updated). 
+> Note: sometimes segmentation fault happens and the possible [solutions](https://knowledge.udacity.com/questions/774058)
 ## Reviewer recommended reference material
 ### Awesome Resources on Web
 Here are some awesome resources I like to go through as additional material for C++ OOP:
